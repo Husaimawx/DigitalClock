@@ -114,7 +114,7 @@ LED共阴极，编码逻辑电平与输出显示相同，置高电平灯亮，�
 #### 3.7 管脚图
 
 <div align="center">
-<img src="img/11.jpg" width = "500" height = "900">
+<img src="img/11.JPG" width = "500" height = "900">
 </div>
 
 #### 4. 系统的Verilog HDL设计
