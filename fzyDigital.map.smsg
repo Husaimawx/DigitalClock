@@ -1,0 +1,2 @@
+Info (10281): Verilog HDL Declaration information at fzyDigital.v(21): object "EN" differs only in case from object "en" in the same scope
+Warning (10273): Verilog HDL warning at decorder.v(21): extended using "x" or "z"

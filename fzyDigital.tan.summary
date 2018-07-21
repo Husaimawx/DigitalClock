@@ -1,0 +1,216 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : -0.131 ns
+From           : EN
+To             : backclock:bcak_user|S_l[3]
+From Clock     : --
+To Clock       : EN
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 28.719 ns
+From           : m_24:hour|qh[2]
+To             : speaker
+From Clock     : cset
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 16.168 ns
+From           : EN_DECORDER
+To             : out_mlz[0]
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 10.727 ns
+From           : rst
+To             : m_60:minute|count
+From Clock     : --
+To Clock       : cset
+Failed Paths   : 0
+
+Type           : Clock Setup: 'cset'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 64.67 MHz ( period = 15.463 ns )
+From           : m_24:hour|ql[1]
+To             : m_24:hour|ql[2]
+From Clock     : cset
+To Clock       : cset
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clk'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 68.61 MHz ( period = 14.575 ns )
+From           : m_24:hour|ql[3]
+To             : LCD1602:Lcd1602|Data_Buf[81]
+From Clock     : clk
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'rst'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 260.96 MHz ( period = 3.832 ns )
+From           : backclock:bcak_user|M_h[2]
+To             : backclock:bcak_user|H_l[0]
+From Clock     : rst
+To Clock       : rst
+Failed Paths   : 0
+
+Type           : Clock Setup: 'H_SET'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 260.96 MHz ( period = 3.832 ns )
+From           : backclock:bcak_user|M_h[2]
+To             : backclock:bcak_user|H_l[0]
+From Clock     : H_SET
+To Clock       : H_SET
+Failed Paths   : 0
+
+Type           : Clock Setup: 'M_SET'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 260.96 MHz ( period = 3.832 ns )
+From           : backclock:bcak_user|M_h[2]
+To             : backclock:bcak_user|H_l[0]
+From Clock     : M_SET
+To Clock       : M_SET
+Failed Paths   : 0
+
+Type           : Clock Setup: 'S_SET'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 260.96 MHz ( period = 3.832 ns )
+From           : backclock:bcak_user|M_h[2]
+To             : backclock:bcak_user|H_l[0]
+From Clock     : S_SET
+To Clock       : S_SET
+Failed Paths   : 0
+
+Type           : Clock Setup: 'EN'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 260.96 MHz ( period = 3.832 ns )
+From           : backclock:bcak_user|M_h[2]
+To             : backclock:bcak_user|H_l[0]
+From Clock     : EN
+To Clock       : EN
+Failed Paths   : 0
+
+Type           : Clock Setup: 'CLOCK_C'
+Slack          : N/A
+Required Time  : None
+Actual Time    : Restricted to 420.17 MHz ( period = 2.380 ns )
+From           : clock:clock_user|Mh[0]
+To             : clock:clock_user|Mh[1]
+From Clock     : CLOCK_C
+To Clock       : CLOCK_C
+Failed Paths   : 0
+
+Type           : Clock Setup: 'CLOCK_A'
+Slack          : N/A
+Required Time  : None
+Actual Time    : Restricted to 420.17 MHz ( period = 2.380 ns )
+From           : clock:clock_user|Hh[0]
+To             : clock:clock_user|Hh[1]
+From Clock     : CLOCK_A
+To Clock       : CLOCK_A
+Failed Paths   : 0
+
+Type           : Clock Setup: 'CLOCK_D'
+Slack          : N/A
+Required Time  : None
+Actual Time    : Restricted to 420.17 MHz ( period = 2.380 ns )
+From           : clock:clock_user|Ml[0]
+To             : clock:clock_user|Ml[1]
+From Clock     : CLOCK_D
+To Clock       : CLOCK_D
+Failed Paths   : 0
+
+Type           : Clock Setup: 'CLOCK_B'
+Slack          : N/A
+Required Time  : None
+Actual Time    : Restricted to 420.17 MHz ( period = 2.380 ns )
+From           : clock:clock_user|Hl[0]
+To             : clock:clock_user|Hl[2]
+From Clock     : CLOCK_B
+To Clock       : CLOCK_B
+Failed Paths   : 0
+
+Type           : Clock Setup: 'h'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 443.26 MHz ( period = 2.256 ns )
+From           : m_24:hour|ql[1]
+To             : m_24:hour|ql[2]
+From Clock     : h
+To Clock       : h
+Failed Paths   : 0
+
+Type           : Clock Setup: 'm'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 443.26 MHz ( period = 2.256 ns )
+From           : m_24:hour|ql[1]
+To             : m_24:hour|ql[2]
+From Clock     : m
+To Clock       : m
+Failed Paths   : 0
+
+Type           : Clock Setup: 's'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 443.26 MHz ( period = 2.256 ns )
+From           : m_24:hour|ql[1]
+To             : m_24:hour|ql[2]
+From Clock     : s
+To Clock       : s
+Failed Paths   : 0
+
+Type           : Clock Hold: 'cset'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : m_24:hour|ql[2]
+To             : m_24:hour|ql[2]
+From Clock     : cset
+To Clock       : cset
+Failed Paths   : 180
+
+Type           : Clock Hold: 'clk'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : s_1:clk_s1|out_1
+To             : backclock:bcak_user|H_h[3]
+From Clock     : clk
+To Clock       : clk
+Failed Paths   : 25
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 205
+
+--------------------------------------------------------------------------------------
+

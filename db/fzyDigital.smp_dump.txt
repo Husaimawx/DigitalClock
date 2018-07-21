@@ -1,0 +1,10 @@
+
+State Machine - |fzyDigital|LCD1602:Lcd1602|state
+Name state.Write_Data_Second state.Set_Disp_Mode state.Disp_On state.Shift_Down state.Write_Addr state.Write_Data_First state.Clear_Lcd 
+state.Clear_Lcd 0 0 0 0 0 0 0 
+state.Write_Data_First 0 0 0 0 0 1 1 
+state.Write_Addr 0 0 0 0 1 0 1 
+state.Shift_Down 0 0 0 1 0 0 1 
+state.Disp_On 0 0 1 0 0 0 1 
+state.Set_Disp_Mode 0 1 0 0 0 0 1 
+state.Write_Data_Second 1 0 0 0 0 0 1 

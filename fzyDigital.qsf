@@ -1,0 +1,130 @@
+# Copyright (C) 1991-2006 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+
+
+# The default values for assignments are stored in the file
+#		fzyDigital_assignment_defaults.qdf
+# If this file doesn't exist, and for assignments not listed, see file
+#		assignment_defaults.qdf
+
+# Altera recommends that you do not modify this file. This
+# file is updated automatically by the Quartus II software
+# and any changes you make may be lost or overwritten.
+
+
+set_global_assignment -name FAMILY "Cyclone II"
+set_global_assignment -name DEVICE EP2C35F672C6
+set_global_assignment -name TOP_LEVEL_ENTITY fzyDigital
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 6.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "20:33:26  JULY 20, 2018"
+set_global_assignment -name LAST_QUARTUS_VERSION 6.0
+set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 672
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 6
+set_global_assignment -name VERILOG_FILE fzyDigital.v
+set_global_assignment -name VERILOG_FILE clock.v
+set_location_assignment PIN_AD13 -to CLOCK_A
+set_location_assignment PIN_AF14 -to CLOCK_B
+set_location_assignment PIN_AE14 -to CLOCK_C
+set_location_assignment PIN_P25 -to CLOCK_D
+set_location_assignment PIN_J1 -to DB8[0]
+set_location_assignment PIN_J2 -to DB8[1]
+set_location_assignment PIN_H1 -to DB8[2]
+set_location_assignment PIN_H2 -to DB8[3]
+set_location_assignment PIN_J4 -to DB8[4]
+set_location_assignment PIN_J3 -to DB8[5]
+set_location_assignment PIN_H4 -to DB8[6]
+set_location_assignment PIN_H3 -to DB8[7]
+set_location_assignment PIN_A13 -to EN
+set_location_assignment PIN_V2 -to EN_DECORDER
+set_location_assignment PIN_B13 -to H_SET
+set_location_assignment PIN_K3 -to LCD_EN
+set_location_assignment PIN_L4 -to LCD_ON
+set_location_assignment PIN_C13 -to M_SET
+set_location_assignment PIN_K1 -to RS
+set_location_assignment PIN_K4 -to RW
+set_location_assignment PIN_AC13 -to S_SET
+set_location_assignment PIN_N2 -to clk
+set_location_assignment PIN_N26 -to cset
+set_location_assignment PIN_Y12 -to en
+set_location_assignment PIN_P23 -to h
+set_location_assignment PIN_AE22 -to led1
+set_location_assignment PIN_AF22 -to led2
+set_location_assignment PIN_W19 -to led3
+set_location_assignment PIN_V18 -to led4
+set_location_assignment PIN_U18 -to led5
+set_location_assignment PIN_U17 -to led6
+set_location_assignment PIN_AA20 -to led7
+set_location_assignment PIN_Y18 -to led8
+set_location_assignment PIN_N23 -to m
+set_location_assignment PIN_L3 -to out_Hhz[0]
+set_location_assignment PIN_L2 -to out_Hhz[1]
+set_location_assignment PIN_L9 -to out_Hhz[2]
+set_location_assignment PIN_L6 -to out_Hhz[3]
+set_location_assignment PIN_L7 -to out_Hhz[4]
+set_location_assignment PIN_P9 -to out_Hhz[5]
+set_location_assignment PIN_N9 -to out_Hhz[6]
+set_location_assignment PIN_R2 -to out_Hlz[0]
+set_location_assignment PIN_P4 -to out_Hlz[1]
+set_location_assignment PIN_P3 -to out_Hlz[2]
+set_location_assignment PIN_M2 -to out_Hlz[3]
+set_location_assignment PIN_M3 -to out_Hlz[4]
+set_location_assignment PIN_M5 -to out_Hlz[5]
+set_location_assignment PIN_M4 -to out_Hlz[6]
+set_location_assignment PIN_AD12 -to out_k
+set_location_assignment PIN_Y23 -to out_mhb[0]
+set_location_assignment PIN_AA25 -to out_mhb[1]
+set_location_assignment PIN_AA26 -to out_mhb[2]
+set_location_assignment PIN_Y26 -to out_mhb[3]
+set_location_assignment PIN_Y25 -to out_mhb[4]
+set_location_assignment PIN_U22 -to out_mhb[5]
+set_location_assignment PIN_W24 -to out_mhb[6]
+set_location_assignment PIN_T2 -to out_mhz[0]
+set_location_assignment PIN_P6 -to out_mhz[1]
+set_location_assignment PIN_P7 -to out_mhz[2]
+set_location_assignment PIN_T9 -to out_mhz[3]
+set_location_assignment PIN_R5 -to out_mhz[4]
+set_location_assignment PIN_R4 -to out_mhz[5]
+set_location_assignment PIN_R3 -to out_mhz[6]
+set_location_assignment PIN_AB23 -to out_mlb[0]
+set_location_assignment PIN_V22 -to out_mlb[1]
+set_location_assignment PIN_AC25 -to out_mlb[2]
+set_location_assignment PIN_AC26 -to out_mlb[3]
+set_location_assignment PIN_AB26 -to out_mlb[4]
+set_location_assignment PIN_AB25 -to out_mlb[5]
+set_location_assignment PIN_Y24 -to out_mlb[6]
+set_location_assignment PIN_U9 -to out_mlz[0]
+set_location_assignment PIN_U1 -to out_mlz[1]
+set_location_assignment PIN_U2 -to out_mlz[2]
+set_location_assignment PIN_T4 -to out_mlz[3]
+set_location_assignment PIN_R7 -to out_mlz[4]
+set_location_assignment PIN_R6 -to out_mlz[5]
+set_location_assignment PIN_T3 -to out_mlz[6]
+set_location_assignment PIN_V20 -to out_shb[0]
+set_location_assignment PIN_V21 -to out_shb[1]
+set_location_assignment PIN_W21 -to out_shb[2]
+set_location_assignment PIN_Y22 -to out_shb[3]
+set_location_assignment PIN_AA24 -to out_shb[4]
+set_location_assignment PIN_AA23 -to out_shb[5]
+set_location_assignment PIN_AB24 -to out_shb[6]
+set_location_assignment PIN_AF10 -to out_slb[0]
+set_location_assignment PIN_AB12 -to out_slb[1]
+set_location_assignment PIN_AC12 -to out_slb[2]
+set_location_assignment PIN_AD11 -to out_slb[3]
+set_location_assignment PIN_AE11 -to out_slb[4]
+set_location_assignment PIN_V14 -to out_slb[5]
+set_location_assignment PIN_V13 -to out_slb[6]
+set_location_assignment PIN_N25 -to rst
+set_location_assignment PIN_G26 -to s
+set_location_assignment PIN_D25 -to speaker

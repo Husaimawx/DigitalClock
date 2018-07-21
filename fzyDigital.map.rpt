@@ -1,0 +1,468 @@
+Analysis & Synthesis report for fzyDigital
+Sat Jul 21 11:22:38 2018
+Version 6.0 Build 178 04/27/2006 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. State Machine - |fzyDigital|LCD1602:Lcd1602|state
+  8. General Register Statistics
+  9. Inverted Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: s_1:clk_s1
+ 12. Parameter Settings for User Entity Instance: LCD1602:Lcd1602
+ 13. Analysis & Synthesis Messages
+ 14. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2006 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                 ;
++------------------------------------+-----------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Jul 21 11:22:38 2018   ;
+; Quartus II Version                 ; 6.0 Build 178 04/27/2006 SJ Web Edition ;
+; Revision Name                      ; fzyDigital                              ;
+; Top-level Entity Name              ; fzyDigital                              ;
+; Family                             ; Cyclone II                              ;
+; Total logic elements               ; 469                                     ;
+; Total registers                    ; 237                                     ;
+; Total pins                         ; 94                                      ;
+; Total virtual pins                 ; 0                                       ;
+; Total memory bits                  ; 0                                       ;
+; Embedded Multiplier 9-bit elements ; 0                                       ;
+; Total PLLs                         ; 0                                       ;
++------------------------------------+-----------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                ;
++--------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                             ; Setting            ; Default Value      ;
++--------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                             ; EP2C35F672C6       ;                    ;
+; Top-level entity name                                              ; fzyDigital         ; fzyDigital         ;
+; Family name                                                        ; Cyclone II         ; Stratix            ;
+; Use smart compilation                                              ; Off                ; Off                ;
+; Restructure Multiplexers                                           ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                ; Off                ; Off                ;
+; Preserve fewer node names                                          ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                          ; Off                ; Off                ;
+; Verilog Version                                                    ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                       ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                           ; Auto               ; Auto               ;
+; Extract Verilog State Machines                                     ; On                 ; On                 ;
+; Extract VHDL State Machines                                        ; On                 ; On                 ;
+; Add Pass-Through Logic to Inferred RAMs                            ; On                 ; On                 ;
+; DSP Block Balancing                                                ; Auto               ; Auto               ;
+; Maximum DSP Block Usage                                            ; Unlimited          ; Unlimited          ;
+; NOT Gate Push-Back                                                 ; On                 ; On                 ;
+; Power-Up Don't Care                                                ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                       ; Off                ; Off                ;
+; Remove Duplicate Registers                                         ; On                 ; On                 ;
+; Ignore CARRY Buffers                                               ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                             ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                              ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                          ; Off                ; Off                ;
+; Ignore LCELL Buffers                                               ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                     ; Off                ; Off                ;
+; Optimization Technique -- Cyclone II                               ; Balanced           ; Balanced           ;
+; Carry Chain Length -- Stratix/Stratix GX/Cyclone/MAX II/Cyclone II ; 70                 ; 70                 ;
+; Auto Carry Chains                                                  ; On                 ; On                 ;
+; Auto Open-Drain Pins                                               ; On                 ; On                 ;
+; Remove Duplicate Logic                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                              ; Off                ; Off                ;
+; Perform gate-level register retiming                               ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax             ; On                 ; On                 ;
+; Auto ROM Replacement                                               ; On                 ; On                 ;
+; Auto RAM Replacement                                               ; On                 ; On                 ;
+; Auto Shift Register Replacement                                    ; On                 ; On                 ;
+; Auto Clock Enable Replacement                                      ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                  ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                             ; Off                ; Off                ;
+; Auto Resource Sharing                                              ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                 ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                 ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                      ; Off                ; Off                ;
+; Maximum Number of M4K Memory Blocks                                ; Unlimited          ; Unlimited          ;
+; Ignore translate_off and translate_on Synthesis Directives         ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                 ; Off                ; Off                ;
+; Retiming Meta-Stability Register Sequence Length                   ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                       ; Normal compilation ; Normal compilation ;
+; HDL message level                                                  ; Level2             ; Level2             ;
++--------------------------------------------------------------------+--------------------+--------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                            ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------+
+; fzyDigital.v                     ; yes             ; User Verilog HDL File  ; C:/fuujiro/fuujiroCode/verilog/fzy-digital/fzyDigital.v ;
+; clock.v                          ; yes             ; User Verilog HDL File  ; C:/fuujiro/fuujiroCode/verilog/fzy-digital/clock.v      ;
+; s_1.v                            ; yes             ; Other                  ; C:/fuujiro/fuujiroCode/verilog/fzy-digital/s_1.v        ;
+; m_60.v                           ; yes             ; Other                  ; C:/fuujiro/fuujiroCode/verilog/fzy-digital/m_60.v       ;
+; m_24.v                           ; yes             ; Other                  ; C:/fuujiro/fuujiroCode/verilog/fzy-digital/m_24.v       ;
+; clk_s2.v                         ; yes             ; Other                  ; C:/fuujiro/fuujiroCode/verilog/fzy-digital/clk_s2.v     ;
+; LED_1.v                          ; yes             ; Other                  ; C:/fuujiro/fuujiroCode/verilog/fzy-digital/LED_1.v      ;
+; backclock.v                      ; yes             ; Other                  ; C:/fuujiro/fuujiroCode/verilog/fzy-digital/backclock.v  ;
+; decorder.v                       ; yes             ; Other                  ; C:/fuujiro/fuujiroCode/verilog/fzy-digital/decorder.v   ;
+; LcdWord.v                        ; yes             ; Other                  ; C:/fuujiro/fuujiroCode/verilog/fzy-digital/LcdWord.v    ;
+; LCD1602.v                        ; yes             ; Other                  ; C:/fuujiro/fuujiroCode/verilog/fzy-digital/LCD1602.v    ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                           ;
++---------------------------------------------+-------------------------+
+; Resource                                    ; Usage                   ;
++---------------------------------------------+-------------------------+
+; Estimated Total logic elements              ; 469                     ;
+; Total combinational functions               ; 469                     ;
+; Logic element usage by number of LUT inputs ;                         ;
+;     -- 4 input functions                    ; 250                     ;
+;     -- 3 input functions                    ; 91                      ;
+;     -- <=2 input functions                  ; 128                     ;
+;         -- Combinational cells for routing  ; 0                       ;
+; Logic elements by mode                      ;                         ;
+;     -- normal mode                          ; 401                     ;
+;     -- arithmetic mode                      ; 68                      ;
+; Total registers                             ; 237                     ;
+; I/O pins                                    ; 94                      ;
+; Maximum fan-out node                        ; LCD1602:Lcd1602|clk_2ms ;
+; Maximum fan-out                             ; 122                     ;
+; Total fan-out                               ; 2309                    ;
+; Average fan-out                             ; 2.89                    ;
++---------------------------------------------+-------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                             ;
++----------------------------+-------------------+--------------+-------------+------+--------------+---------+-----------+------+--------------+---------------------------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name             ;
++----------------------------+-------------------+--------------+-------------+------+--------------+---------+-----------+------+--------------+---------------------------------+
+; |fzyDigital                ; 469 (21)          ; 237 (0)      ; 0           ; 0    ; 0            ; 0       ; 0         ; 94   ; 0            ; |fzyDigital                     ;
+;    |LCD1602:Lcd1602|       ; 159 (159)         ; 137 (137)    ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; |fzyDigital|LCD1602:Lcd1602     ;
+;    |LED_1:LED_1|           ; 7 (7)             ; 1 (1)        ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; |fzyDigital|LED_1:LED_1         ;
+;    |LcdWord:LcdWordhh|     ; 1 (1)             ; 0 (0)        ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; |fzyDigital|LcdWord:LcdWordhh   ;
+;    |LcdWord:LcdWordhl|     ; 1 (1)             ; 0 (0)        ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; |fzyDigital|LcdWord:LcdWordhl   ;
+;    |LcdWord:LcdWordmh|     ; 1 (1)             ; 0 (0)        ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; |fzyDigital|LcdWord:LcdWordmh   ;
+;    |LcdWord:LcdWordml|     ; 1 (1)             ; 0 (0)        ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; |fzyDigital|LcdWord:LcdWordml   ;
+;    |LcdWord:LcdWordsh|     ; 1 (1)             ; 0 (0)        ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; |fzyDigital|LcdWord:LcdWordsh   ;
+;    |LcdWord:LcdWordsl|     ; 1 (1)             ; 0 (0)        ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; |fzyDigital|LcdWord:LcdWordsl   ;
+;    |backclock:bcak_user|   ; 94 (94)           ; 25 (25)      ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; |fzyDigital|backclock:bcak_user ;
+;    |clk_s2:clk_s2|         ; 1 (1)             ; 1 (1)        ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; |fzyDigital|clk_s2:clk_s2       ;
+;    |clock:clock_user|      ; 23 (23)           ; 14 (14)      ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; |fzyDigital|clock:clock_user    ;
+;    |decorder:decorder_0|   ; 15 (15)           ; 0 (0)        ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; |fzyDigital|decorder:decorder_0 ;
+;    |decorder:decorder_1|   ; 15 (15)           ; 0 (0)        ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; |fzyDigital|decorder:decorder_1 ;
+;    |decorder:decorder_2|   ; 8 (8)             ; 0 (0)        ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; |fzyDigital|decorder:decorder_2 ;
+;    |decorder:decorder_3|   ; 8 (8)             ; 0 (0)        ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; |fzyDigital|decorder:decorder_3 ;
+;    |decorder:decorder_4|   ; 8 (8)             ; 0 (0)        ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; |fzyDigital|decorder:decorder_4 ;
+;    |decorder:decorder_5|   ; 8 (8)             ; 0 (0)        ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; |fzyDigital|decorder:decorder_5 ;
+;    |m_24:hour|             ; 16 (16)           ; 8 (8)        ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; |fzyDigital|m_24:hour           ;
+;    |m_60:minute|           ; 12 (12)           ; 9 (9)        ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; |fzyDigital|m_60:minute         ;
+;    |m_60:second|           ; 12 (12)           ; 9 (9)        ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; |fzyDigital|m_60:second         ;
+;    |s_1:clk_s1|            ; 56 (56)           ; 33 (33)      ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; |fzyDigital|s_1:clk_s1          ;
++----------------------------+-------------------+--------------+-------------+------+--------------+---------+-----------+------+--------------+---------------------------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |fzyDigital|LCD1602:Lcd1602|state                                                                                                                        ;
++-------------------------+-------------------------+---------------------+---------------+------------------+------------------+------------------------+-----------------+
+; Name                    ; state.Write_Data_Second ; state.Set_Disp_Mode ; state.Disp_On ; state.Shift_Down ; state.Write_Addr ; state.Write_Data_First ; state.Clear_Lcd ;
++-------------------------+-------------------------+---------------------+---------------+------------------+------------------+------------------------+-----------------+
+; state.Clear_Lcd         ; 0                       ; 0                   ; 0             ; 0                ; 0                ; 0                      ; 0               ;
+; state.Write_Data_First  ; 0                       ; 0                   ; 0             ; 0                ; 0                ; 1                      ; 1               ;
+; state.Write_Addr        ; 0                       ; 0                   ; 0             ; 0                ; 1                ; 0                      ; 1               ;
+; state.Shift_Down        ; 0                       ; 0                   ; 0             ; 1                ; 0                ; 0                      ; 1               ;
+; state.Disp_On           ; 0                       ; 0                   ; 1             ; 0                ; 0                ; 0                      ; 1               ;
+; state.Set_Disp_Mode     ; 0                       ; 1                   ; 0             ; 0                ; 0                ; 0                      ; 1               ;
+; state.Write_Data_Second ; 1                       ; 0                   ; 0             ; 0                ; 0                ; 0                      ; 1               ;
++-------------------------+-------------------------+---------------------+---------------+------------------+------------------+------------------------+-----------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 237   ;
+; Number of registers using Synchronous Clear  ; 3     ;
+; Number of registers using Synchronous Load   ; 18    ;
+; Number of registers using Asynchronous Clear ; 46    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 134   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; LCD1602:Lcd1602|RS                     ; 2       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |fzyDigital|LCD1602:Lcd1602|disp_count[3] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |fzyDigital|m_24:hour|qh[3]               ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |fzyDigital|m_24:hour|ql[3]               ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |fzyDigital|LCD1602:Lcd1602|Data_Buf[8]   ;
+; 6:1                ; 83 bits   ; 332 LEs       ; 166 LEs              ; 166 LEs                ; Yes        ; |fzyDigital|LCD1602:Lcd1602|Data_Buf[70]  ;
+; 6:1                ; 24 bits   ; 96 LEs        ; 48 LEs               ; 48 LEs                 ; Yes        ; |fzyDigital|LCD1602:Lcd1602|Data_Buf[58]  ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 2 LEs                ; 10 LEs                 ; Yes        ; |fzyDigital|backclock:bcak_user|S_l[2]    ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |fzyDigital|backclock:bcak_user|S_l[3]    ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 2 LEs                ; 10 LEs                 ; Yes        ; |fzyDigital|backclock:bcak_user|M_l[1]    ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |fzyDigital|backclock:bcak_user|M_l[3]    ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 2 LEs                ; 12 LEs                 ; Yes        ; |fzyDigital|backclock:bcak_user|H_l[1]    ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 4 LEs                ; 10 LEs                 ; Yes        ; |fzyDigital|backclock:bcak_user|H_l[3]    ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 2 LEs                ; 12 LEs                 ; Yes        ; |fzyDigital|backclock:bcak_user|S_h[1]    ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 4 LEs                ; 10 LEs                 ; Yes        ; |fzyDigital|backclock:bcak_user|S_h[0]    ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 2 LEs                ; 14 LEs                 ; Yes        ; |fzyDigital|backclock:bcak_user|M_h[3]    ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |fzyDigital|backclock:bcak_user|M_h[2]    ;
+; 13:1               ; 4 bits    ; 32 LEs        ; 4 LEs                ; 28 LEs                 ; Yes        ; |fzyDigital|backclock:bcak_user|H_h[0]    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: s_1:clk_s1 ;
++----------------+----------+-----------------------------+
+; Parameter Name ; Value    ; Type                        ;
++----------------+----------+-----------------------------+
+; m              ; 49999999 ; Integer                     ;
++----------------+----------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LCD1602:Lcd1602 ;
++-------------------+-------+----------------------------------+
+; Parameter Name    ; Value ; Type                             ;
++-------------------+-------+----------------------------------+
+; Clear_Lcd         ; 0000  ; Binary                           ;
+; Set_Disp_Mode     ; 0001  ; Binary                           ;
+; Disp_On           ; 0010  ; Binary                           ;
+; Shift_Down        ; 0011  ; Binary                           ;
+; Write_Addr        ; 0100  ; Binary                           ;
+; Write_Data_First  ; 0101  ; Binary                           ;
+; Write_Data_Second ; 0110  ; Binary                           ;
++-------------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 6.0 Build 178 04/27/2006 SJ Web Edition
+    Info: Processing started: Sat Jul 21 11:22:36 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off fzyDigital -c fzyDigital
+Info (10151): Verilog HDL Declaration information at fzyDigital.v(33): "en" is declared here
+Info: Found 1 design units, including 1 entities, in source file fzyDigital.v
+    Info: Found entity 1: fzyDigital
+Info: Found 1 design units, including 1 entities, in source file clock.v
+    Info: Found entity 1: clock
+Info: Elaborating entity "fzyDigital" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at fzyDigital.v(128): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at fzyDigital.v(129): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at fzyDigital.v(134): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at fzyDigital.v(135): truncated value with size 32 to match size of target (4)
+Warning (10034): Output port "led8" at fzyDigital.v(18) has no driver
+Warning (10261): Verilog HDL Event Control warning at s_1.v(8): Event Control contains a complex event expression
+Warning: Using design file s_1.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: s_1
+Info: Elaborating entity "s_1" for hierarchy "s_1:clk_s1"
+Warning: Using design file m_60.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: m_60
+Info: Elaborating entity "m_60" for hierarchy "m_60:second"
+Warning (10230): Verilog HDL assignment warning at m_60.v(26): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at m_60.v(32): truncated value with size 32 to match size of target (4)
+Warning: Using design file m_24.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: m_24
+Info: Elaborating entity "m_24" for hierarchy "m_24:hour"
+Warning (10230): Verilog HDL assignment warning at m_24.v(19): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at m_24.v(27): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at m_24.v(30): truncated value with size 32 to match size of target (1)
+Warning: Using design file clk_s2.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: clk_s2
+Info: Elaborating entity "clk_s2" for hierarchy "clk_s2:clk_s2"
+Warning: Using design file LED_1.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: LED_1
+Info: Elaborating entity "LED_1" for hierarchy "LED_1:LED_1"
+Info: Elaborating entity "clock" for hierarchy "clock:clock_user"
+Warning (10235): Verilog HDL Always Construct warning at clock.v(55): variable "out_Hh" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at clock.v(55): variable "Hh" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at clock.v(55): variable "out_Hl" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at clock.v(55): variable "Hl" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at clock.v(55): variable "out_mh" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at clock.v(55): variable "Mh" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at clock.v(55): variable "out_ml" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at clock.v(55): variable "Ml" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning: Using design file backclock.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: backclock
+Info: Elaborating entity "backclock" for hierarchy "backclock:bcak_user"
+Warning (10230): Verilog HDL assignment warning at backclock.v(51): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at backclock.v(57): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at backclock.v(63): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at backclock.v(69): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at backclock.v(75): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at backclock.v(81): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at backclock.v(98): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at backclock.v(101): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at backclock.v(112): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at backclock.v(115): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at backclock.v(126): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at backclock.v(129): truncated value with size 32 to match size of target (4)
+Warning: Using design file decorder.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: decorder
+Info: Elaborating entity "decorder" for hierarchy "decorder:decorder_0"
+Warning: Using design file LcdWord.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: LcdWord
+Info: Elaborating entity "LcdWord" for hierarchy "LcdWord:LcdWordhh"
+Warning: Using design file LCD1602.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info: Found entity 1: LCD1602
+Info: Elaborating entity "LCD1602" for hierarchy "LCD1602:Lcd1602"
+Warning: Reduced register "clock:clock_user|Hh[2]" with stuck data_in port to stuck value GND
+Warning: Reduced register "clock:clock_user|Hh[3]" with stuck data_in port to stuck value GND
+Info: Duplicate registers merged to single register
+    Info: Duplicate register "LED_1:LED_1|led1" merged to single register "LED_1:LED_1|led2"
+    Info: Duplicate register "LED_1:LED_1|led3" merged to single register "LED_1:LED_1|led2"
+    Info: Duplicate register "LED_1:LED_1|led4" merged to single register "LED_1:LED_1|led2"
+    Info: Duplicate register "LED_1:LED_1|led5" merged to single register "LED_1:LED_1|led2"
+    Info: Duplicate register "LED_1:LED_1|led6" merged to single register "LED_1:LED_1|led2"
+    Info: Duplicate register "LED_1:LED_1|led7" merged to single register "LED_1:LED_1|led2"
+    Info: Duplicate register "clk_s2:clk_s2|a" merged to single register "clk_s2:clk_s2|clk_2", power-up level changed
+Info: Duplicate registers merged to single register
+    Info: Duplicate register "LCD1602:Lcd1602|Data_Buf[6]" merged to single register "LCD1602:Lcd1602|Data_Buf[7]"
+    Info: Duplicate register "LCD1602:Lcd1602|Data_Buf[4]" merged to single register "LCD1602:Lcd1602|Data_Buf[7]"
+    Info: Duplicate register "LCD1602:Lcd1602|Data_Buf[2]" merged to single register "LCD1602:Lcd1602|Data_Buf[3]"
+    Info: Duplicate register "LCD1602:Lcd1602|Data_Buf[0]" merged to single register "LCD1602:Lcd1602|Data_Buf[3]"
+    Info: Duplicate register "LCD1602:Lcd1602|Data_Buf[1]" merged to single register "LCD1602:Lcd1602|Data_Buf[3]"
+    Info: Duplicate register "LCD1602:Lcd1602|Data_Buf[12]" merged to single register "LCD1602:Lcd1602|Data_Buf[14]"
+    Info: Duplicate register "LCD1602:Lcd1602|Data_Buf[10]" merged to single register "LCD1602:Lcd1602|Data_Buf[11]"
+    Info: Duplicate register "LCD1602:Lcd1602|Data_Buf[9]" merged to single register "LCD1602:Lcd1602|Data_Buf[11]"
+    Info: Duplicate register "LCD1602:Lcd1602|Data_Buf[20]" merged to single register "LCD1602:Lcd1602|Data_Buf[22]"
+    Info: Duplicate register "LCD1602:Lcd1602|Data_Buf[18]" merged to single register "LCD1602:Lcd1602|Data_Buf[19]"
+    Info: Duplicate register "LCD1602:Lcd1602|Data_Buf[17]" merged to single register "LCD1602:Lcd1602|Data_Buf[19]"
+    Info: Duplicate register "LCD1602:Lcd1602|Data_Buf[28]" merged to single register "LCD1602:Lcd1602|Data_Buf[30]"
+    Info: Duplicate register "LCD1602:Lcd1602|Data_Buf[26]" merged to single register "LCD1602:Lcd1602|Data_Buf[27]"
+    Info: Duplicate register "LCD1602:Lcd1602|Data_Buf[25]" merged to single register "LCD1602:Lcd1602|Data_Buf[27]"
+Warning: Reduced register "LCD1602:Lcd1602|Data_Buf[7]" with stuck data_in port to stuck value GND
+Warning: Reduced register "LCD1602:Lcd1602|Data_Buf[15]" with stuck data_in port to stuck value GND
+Warning: Reduced register "LCD1602:Lcd1602|Data_Buf[23]" with stuck data_in port to stuck value GND
+Warning: Reduced register "LCD1602:Lcd1602|Data_Buf[31]" with stuck data_in port to stuck value GND
+Warning: Reduced register "LCD1602:Lcd1602|Data_Buf[39]" with stuck data_in port to stuck value GND
+Warning: Reduced register "LCD1602:Lcd1602|Data_Buf[47]" with stuck data_in port to stuck value GND
+Warning: Reduced register "LCD1602:Lcd1602|Data_Buf[55]" with stuck data_in port to stuck value GND
+Warning: Reduced register "LCD1602:Lcd1602|Data_Buf[63]" with stuck data_in port to stuck value GND
+Warning: Reduced register "LCD1602:Lcd1602|Data_Buf[71]" with stuck data_in port to stuck value GND
+Warning: Reduced register "LCD1602:Lcd1602|Data_Buf[79]" with stuck data_in port to stuck value GND
+Warning: Reduced register "LCD1602:Lcd1602|Data_Buf[87]" with stuck data_in port to stuck value GND
+Warning: Reduced register "LCD1602:Lcd1602|Data_Buf[95]" with stuck data_in port to stuck value GND
+Warning: Reduced register "LCD1602:Lcd1602|Data_Buf[103]" with stuck data_in port to stuck value GND
+Warning: Reduced register "LCD1602:Lcd1602|Data_Buf[111]" with stuck data_in port to stuck value GND
+Warning: Reduced register "LCD1602:Lcd1602|Data_Buf[119]" with stuck data_in port to stuck value GND
+Warning: Reduced register "LCD1602:Lcd1602|Data_Buf[127]" with stuck data_in port to stuck value GND
+Info: State machine "|fzyDigital|LCD1602:Lcd1602|state" contains 7 states
+Info: Selected Auto state machine encoding method for state machine "|fzyDigital|LCD1602:Lcd1602|state"
+Info: Encoding result for state machine "|fzyDigital|LCD1602:Lcd1602|state"
+    Info: Completed encoding using 7 state bits
+        Info: Encoded state bit "LCD1602:Lcd1602|state.Write_Data_Second"
+        Info: Encoded state bit "LCD1602:Lcd1602|state.Set_Disp_Mode"
+        Info: Encoded state bit "LCD1602:Lcd1602|state.Disp_On"
+        Info: Encoded state bit "LCD1602:Lcd1602|state.Shift_Down"
+        Info: Encoded state bit "LCD1602:Lcd1602|state.Write_Addr"
+        Info: Encoded state bit "LCD1602:Lcd1602|state.Write_Data_First"
+        Info: Encoded state bit "LCD1602:Lcd1602|state.Clear_Lcd"
+    Info: State "|fzyDigital|LCD1602:Lcd1602|state.Clear_Lcd" uses code string "0000000"
+    Info: State "|fzyDigital|LCD1602:Lcd1602|state.Write_Data_First" uses code string "0000011"
+    Info: State "|fzyDigital|LCD1602:Lcd1602|state.Write_Addr" uses code string "0000101"
+    Info: State "|fzyDigital|LCD1602:Lcd1602|state.Shift_Down" uses code string "0001001"
+    Info: State "|fzyDigital|LCD1602:Lcd1602|state.Disp_On" uses code string "0010001"
+    Info: State "|fzyDigital|LCD1602:Lcd1602|state.Set_Disp_Mode" uses code string "0100001"
+    Info: State "|fzyDigital|LCD1602:Lcd1602|state.Write_Data_Second" uses code string "1000001"
+Warning: Removed always-enabled tri-state buffer decorder:decorder_7|Y[6] feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer decorder:decorder_6|Y[6] feeding logic, open-drain buffer, or output pin
+Warning: Removing always-enabled open-drain buffer decorder:decorder_7|Y[0]~2 and setting the output pin out_Hhz[0] that it feeds to GND
+Warning: Removing always-enabled open-drain buffer decorder:decorder_7|Y[1]~3 and setting the output pin out_Hhz[1] that it feeds to GND
+Warning: Removing always-enabled open-drain buffer decorder:decorder_7|Y[2]~4 and setting the output pin out_Hhz[2] that it feeds to GND
+Warning: Removing always-enabled open-drain buffer decorder:decorder_7|Y[3]~5 and setting the output pin out_Hhz[3] that it feeds to GND
+Warning: Removing always-enabled open-drain buffer decorder:decorder_7|Y[4]~6 and setting the output pin out_Hhz[4] that it feeds to GND
+Warning: Removing always-enabled open-drain buffer decorder:decorder_7|Y[5]~7 and setting the output pin out_Hhz[5] that it feeds to GND
+Warning: Removing always-enabled open-drain buffer decorder:decorder_6|Y[0]~2 and setting the output pin out_Hlz[0] that it feeds to GND
+Warning: Removing always-enabled open-drain buffer decorder:decorder_6|Y[1]~3 and setting the output pin out_Hlz[1] that it feeds to GND
+Warning: Removing always-enabled open-drain buffer decorder:decorder_6|Y[2]~4 and setting the output pin out_Hlz[2] that it feeds to GND
+Warning: Removing always-enabled open-drain buffer decorder:decorder_6|Y[3]~5 and setting the output pin out_Hlz[3] that it feeds to GND
+Warning: Removing always-enabled open-drain buffer decorder:decorder_6|Y[4]~6 and setting the output pin out_Hlz[4] that it feeds to GND
+Warning: Removing always-enabled open-drain buffer decorder:decorder_6|Y[5]~7 and setting the output pin out_Hlz[5] that it feeds to GND
+Info: Registers with preset signals will power-up high
+Info: DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning: Output pins are stuck at VCC or GND
+    Warning: Pin "out_Hhz[0]" stuck at GND
+    Warning: Pin "out_Hhz[1]" stuck at GND
+    Warning: Pin "out_Hhz[2]" stuck at GND
+    Warning: Pin "out_Hhz[3]" stuck at GND
+    Warning: Pin "out_Hhz[4]" stuck at GND
+    Warning: Pin "out_Hhz[5]" stuck at GND
+    Warning: Pin "out_Hhz[6]" stuck at VCC
+    Warning: Pin "out_Hlz[0]" stuck at GND
+    Warning: Pin "out_Hlz[1]" stuck at GND
+    Warning: Pin "out_Hlz[2]" stuck at GND
+    Warning: Pin "out_Hlz[3]" stuck at GND
+    Warning: Pin "out_Hlz[4]" stuck at GND
+    Warning: Pin "out_Hlz[5]" stuck at GND
+    Warning: Pin "out_Hlz[6]" stuck at VCC
+    Warning: Pin "led8" stuck at GND
+    Warning: Pin "RW" stuck at GND
+    Warning: Pin "LCD_ON" stuck at VCC
+Info: Implemented 569 device resources after synthesis - the final resource count might be different
+    Info: Implemented 15 input pins
+    Info: Implemented 79 output pins
+    Info: Implemented 475 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 90 warnings
+    Info: Processing ended: Sat Jul 21 11:22:38 2018
+    Info: Elapsed time: 00:00:02
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/fuujiro/fuujiroCode/verilog/fzy-digital/fzyDigital.map.smsg.
+
+

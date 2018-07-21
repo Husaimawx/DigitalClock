@@ -1,0 +1,314 @@
+Version 6.0 Build 178 04/27/2006 SJ Web Edition
+11
+767
+OFF
+OFF
+OFF
+OFF
+OFF
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Partition --
+-- End Partition --
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+s_1
+# storage
+db|fzyDigital.(1).cnf
+db|fzyDigital.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+s_1.v
+e1d0d4e5e4961f38d910c7ede8a48dbf
+7
+# internal_option {
+AUTO_RESOURCE_SHARING
+OFF
+}
+# user_parameter {
+m
+49999999
+PARAMETER_DEC
+DEF
+}
+# hierarchies {
+s_1:clk_s1
+}
+# end
+# entity
+m_60
+# storage
+db|fzyDigital.(2).cnf
+db|fzyDigital.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+m_60.v
+267b62f73030d913a2a4e6c8f8a53d19
+7
+# internal_option {
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+m_60:second
+m_60:minute
+}
+# end
+# entity
+m_24
+# storage
+db|fzyDigital.(3).cnf
+db|fzyDigital.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+m_24.v
+f1569a31ad98bc83474098cbff96cf38
+7
+# internal_option {
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+m_24:hour
+}
+# end
+# entity
+clk_s2
+# storage
+db|fzyDigital.(4).cnf
+db|fzyDigital.(4).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+clk_s2.v
+4873ffaafd4da7791816edc10c01880
+7
+# internal_option {
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+clk_s2:clk_s2
+}
+# end
+# entity
+clock
+# storage
+db|fzyDigital.(6).cnf
+db|fzyDigital.(6).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+clock.v
+0644fdf5090b12cc7f1c95fff5cc97
+7
+# internal_option {
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+clock:clock_user
+}
+# end
+# entity
+backclock
+# storage
+db|fzyDigital.(7).cnf
+db|fzyDigital.(7).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+backclock.v
+426b3ab97d571636ebbcc5e60c67390
+7
+# internal_option {
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+backclock:bcak_user
+}
+# end
+# entity
+decorder
+# storage
+db|fzyDigital.(8).cnf
+db|fzyDigital.(8).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+decorder.v
+57726f34144b14a1bebaef138a41f
+7
+# internal_option {
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+decorder:decorder_0
+decorder:decorder_1
+decorder:decorder_2
+decorder:decorder_3
+decorder:decorder_4
+decorder:decorder_5
+decorder:decorder_6
+decorder:decorder_7
+}
+# end
+# entity
+LcdWord
+# storage
+db|fzyDigital.(9).cnf
+db|fzyDigital.(9).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+LcdWord.v
+271ef72d33c22f29659b33b09cc020f7
+7
+# internal_option {
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+LcdWord:LcdWordhh
+LcdWord:LcdWordhl
+LcdWord:LcdWordmh
+LcdWord:LcdWordml
+LcdWord:LcdWordsh
+LcdWord:LcdWordsl
+}
+# end
+# entity
+LCD1602
+# storage
+db|fzyDigital.(10).cnf
+db|fzyDigital.(10).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+LCD1602.v
+375b968d91a043bd8d0c698437f433e
+7
+# internal_option {
+AUTO_RESOURCE_SHARING
+OFF
+}
+# user_parameter {
+Clear_Lcd
+0000
+PARAMETER_BIN
+DEF
+Set_Disp_Mode
+0001
+PARAMETER_BIN
+DEF
+Disp_On
+0010
+PARAMETER_BIN
+DEF
+Shift_Down
+0011
+PARAMETER_BIN
+DEF
+Write_Addr
+0100
+PARAMETER_BIN
+DEF
+Write_Data_First
+0101
+PARAMETER_BIN
+DEF
+Write_Data_Second
+0110
+PARAMETER_BIN
+DEF
+}
+# hierarchies {
+LCD1602:Lcd1602
+}
+# end
+# entity
+fzyDigital
+# storage
+db|fzyDigital.(0).cnf
+db|fzyDigital.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+fzyDigital.v
+264333ec4316bc5c83cf48a26cee315
+7
+# internal_option {
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+|
+}
+# end
+# entity
+LED_1
+# storage
+db|fzyDigital.(5).cnf
+db|fzyDigital.(5).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+LED_1.v
+73d61e432e4b1c247c2f2ae1fd53681
+7
+# internal_option {
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+LED_1:LED_1
+}
+# end
+# complete
+
